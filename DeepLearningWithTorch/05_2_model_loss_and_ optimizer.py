@@ -74,3 +74,16 @@ for epoch in range(n_iters):
         print('epoch ', epoch+1, ': w = ', w[0][0].item(), ' loss = ', l)
 
 print(f'Prediction after training: f(5) = {model(X_test).item():.3f}')
+
+
+
+# ================= List of optimizer ==================
+import torch.optim as optim
+
+optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+
+optimizer = optim.RMSprop(model.parameters(), lr=0.001, alpha=0.9)  # Adaptive Learning Rate for Each Parameter
+
+optimizer = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999))
+
+
